@@ -28,6 +28,9 @@ setup(
             'search_sequence = fv_avalanche_mvd.search_sequence:main',
             'signal_simulation = fv_avalanche_mvd.signal_simulation:main',
             'transponder_localization = fv_avalanche_mvd.transponder_localization:main',
+            
+            'read_wifi = fv_avalanche_mvd.read_wifi:main',
+            'read_wifi_pyWiFi = fv_avalanche_mvd.read_wifi_pyWiFi:main',
         ],
     },
 )

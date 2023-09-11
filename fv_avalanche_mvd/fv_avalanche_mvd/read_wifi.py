@@ -22,7 +22,8 @@ class WifiSignalPublisher(Node):
     def get_wifi_signal_strength(self, ssid):
         try:
             # Use the 'iwlist' command to get the signal strength for the specified SSID
-            output = os.popen(f"iwlist wlan0 scanning | grep '{ssid}' -A 5 | grep 'Signal level='").read()
+            #output = os.popen(f"iwlist wlan0 scanning | grep '{ssid}' -A 5 | grep 'Signal level='").read()
+            output = os.popen(f"iwlist wlan0 scanning | grep 'Signal level='").read()
             signal_level = re.search(r"-[0-9]+", output).group()
             signal_strength = int(signal_level)
             return signal_strength

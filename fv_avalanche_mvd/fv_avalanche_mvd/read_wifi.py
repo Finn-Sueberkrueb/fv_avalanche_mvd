@@ -16,7 +16,7 @@ class WifiSignalPublisher(Node):
         self.declare_parameter('ssid', rclpy.Parameter.Type.STRING) 
         self.ssid = self.get_parameter('ssid').value
         self.get_logger().info(f"SSID = {self.ssid}")
-        self.publisher_ = self.create_publisher(Int32, 'wifi_signal_strength', 10)
+        self.publisher_ = self.create_publisher(Float32, '/fv/signal_strength', 10)
         self.timer = self.create_timer(1, self.publish_wifi_signal)
 
     def get_wifi_signal_strength(self, ssid):
